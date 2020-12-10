@@ -1,0 +1,9 @@
+C:\Users\whitmor\source\repos\travelbug2020\stringcalckata\stringcalckata\bin\Debug\netcoreapp3.1\stringcalckata.deps.json
+C:\Users\whitmor\source\repos\travelbug2020\stringcalckata\stringcalckata\bin\Debug\netcoreapp3.1\stringcalckata.dll
+C:\Users\whitmor\source\repos\travelbug2020\stringcalckata\stringcalckata\bin\Debug\netcoreapp3.1\stringcalckata.pdb
+C:\Users\whitmor\source\repos\travelbug2020\stringcalckata\stringcalckata\obj\Debug\netcoreapp3.1\stringcalckata.csprojAssemblyReference.cache
+C:\Users\whitmor\source\repos\travelbug2020\stringcalckata\stringcalckata\obj\Debug\netcoreapp3.1\stringcalckata.AssemblyInfoInputs.cache
+C:\Users\whitmor\source\repos\travelbug2020\stringcalckata\stringcalckata\obj\Debug\netcoreapp3.1\stringcalckata.AssemblyInfo.cs
+C:\Users\whitmor\source\repos\travelbug2020\stringcalckata\stringcalckata\obj\Debug\netcoreapp3.1\stringcalckata.csproj.CoreCompileInputs.cache
+C:\Users\whitmor\source\repos\travelbug2020\stringcalckata\stringcalckata\obj\Debug\netcoreapp3.1\stringcalckata.dll
+C:\Users\whitmor\source\repos\travelbug2020\stringcalckata\stringcalckata\obj\Debug\netcoreapp3.1\stringcalckata.pdb
