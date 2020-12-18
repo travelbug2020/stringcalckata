@@ -52,11 +52,17 @@ namespace stringcalckata.Test
         }
 
         [TestCase("//;2;3",5)]
+        [TestCase("//;2;3\n5",10)]
         public void ReturnSum_WhenDefiningSeparatorInList_GivenNumbers(string numbers, int expectedResult)
         {
             var result = stringCalc.Add(numbers);
 
             Assert.AreEqual(expectedResult, result);
+        }
+        [TestCase("-2,2,3,5", "negatives Not Allowed")]
+        public void ReturnException_WhenInputHas_NegativeNumbers(string numbers, int expectedResult)
+        {
+
         }
     }
 }
