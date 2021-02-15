@@ -7,52 +7,34 @@ namespace stringcalckata
 {
     public class StringCalc
     {
+        private const int DELIMITER_INDEX = 2;
+
         public int Add(string numbers)
         {
-            string[] splitString = { };
-            char newDelimiter = new char();
+            if (numbers.Contains("-"))
+            {
+                throw new NegativesNotAllowed();
+            }
+            
 
             if (numbers == string.Empty)
             {
                 return 0;
             }
-            
-            List<char> delimiterList = new List<char>();
-            delimiterList.Add('\n');
-            delimiterList.Add(',');
 
+            var delimiterList = new List<char> {'\n', ','};
             if (numbers.Contains("//"))
             {
-                newDelimiter = numbers[2];
+                var newDelimiter = numbers[DELIMITER_INDEX];
                 delimiterList.Add(newDelimiter);
-                numbers = numbers.Remove(0, 3);
-                splitString = numbers.Split(delimiterList.ToArray());
+                numbers = numbers.Remove(0, 4);
             }
-            else
-            {
-                splitString = numbers.Split(delimiterList.ToArray());
-            }
-           
-            
-            //List<char> delimiterList = new List<char>();
-            //if (delimiterIndex != -1)
-            //{
-                
-            //    delimiterList = new List<char>();
-            //    char delimiter = numbers[delimiterIndex + 2];
-            //    char[] sep = new char[',''\n''delimiter'];
-            //    splitString = numbers.Split(',','\n','{delimiter}');
-            //    var paramSeparator = "',', '\n', {delimiter}";
-            //    numbers.Remove(numbers[0], 2);
-            //}
 
-
-            var arrayOfNumbers = splitString.Select(stringNumber => Convert.ToInt32(stringNumber))
-                .ToArray();
-            
-            
-
-            return arrayOfNumbers.Sum();
+            var splitNumbers = numbers
+                .Split(delimiterList.ToArray());
+            return splitNumbers
+                .Select(stringNumber => Convert.ToInt32(stringNumber))
+                .Sum();
 
         }
     }

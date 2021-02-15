@@ -2,6 +2,11 @@
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=7ebd8d73_002D14b1_002D40a8_002Db898_002D77954b68287a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="All tests from Solution" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;Solution /&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=bcc4107d_002De966_002D4eec_002Db36a_002D3d3b5a432ff0/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="ReturnSum_WhenDefiningSeparatorInList_GivenNumbers" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::701344A3-AC23-4222-A418-C3230A0FBDD5::.NETCoreApp,Version=v3.1::stringcalckata.Test.Tests.ReturnSum_WhenDefiningSeparatorInList_GivenNumbers&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d8562766_002D411b_002D4605_002Db767_002Dd6aed90b4e7e/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="All tests from Solution #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;Solution /&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
