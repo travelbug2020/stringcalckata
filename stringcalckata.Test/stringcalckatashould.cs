@@ -61,10 +61,19 @@ namespace stringcalckata.Test
         }
         [TestCase("-2")]
         [TestCase("-3")]
+        [TestCase("-3,5")]
         public void ReturnException_WhenInputHas_NegativeNumbers(string numbers)
         {
             Assert.Throws<NegativesNotAllowed>(() => { stringCalc.Add(numbers);});
                 
+        }
+        [TestCase("1001",0)]
+        [TestCase("1003",0)]
+        [TestCase("1003,5,3,2",10)]
+        public void ReturnSum_WhenIgnoring_BigNumbers(string numbers, int expectedResult)
+        {
+            var result = stringCalc.Add(numbers);
+            Assert.AreEqual(expectedResult, result);
         }
     }
 }

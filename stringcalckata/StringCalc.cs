@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Net.Http.Headers;
 
 namespace stringcalckata
@@ -11,11 +12,12 @@ namespace stringcalckata
 
         public int Add(string numbers)
         {
+
             if (numbers.Contains("-"))
             {
                 throw new NegativesNotAllowed();
             }
-            
+
 
             if (numbers == string.Empty)
             {
@@ -32,7 +34,20 @@ namespace stringcalckata
 
             var splitNumbers = numbers
                 .Split(delimiterList.ToArray());
-            return splitNumbers
+
+            List<string> splitNumbersList = new List<string>(splitNumbers);
+            for (int pos = 0; pos < splitNumbersList.Count; pos++)
+            {
+                var value = splitNumbersList[pos];
+                if (Int32.Parse(value) > 1000)
+                {
+                    splitNumbersList.RemoveAt(pos);
+                }
+            }
+
+            splitNumbers = splitNumbersList.ToArray();
+
+        return splitNumbers
                 .Select(stringNumber => Convert.ToInt32(stringNumber))
                 .Sum();
 
