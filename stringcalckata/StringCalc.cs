@@ -25,7 +25,14 @@ namespace stringcalckata
             }
 
             var delimiterList = new List<char> {'\n', ','};
-            if (numbers.Contains("//"))
+
+            if (numbers.Contains("["))
+            {
+
+            
+            }
+            
+            else if (numbers.Contains("//"))
             {
                 var newDelimiter = numbers[DELIMITER_INDEX];
                 delimiterList.Add(newDelimiter);

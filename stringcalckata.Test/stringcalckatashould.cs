@@ -75,5 +75,12 @@ namespace stringcalckata.Test
             var result = stringCalc.Add(numbers);
             Assert.AreEqual(expectedResult, result);
         }
+
+        [TestCase("//[**]\n1**1", 2)]
+        public void ReturnSum_WhenIgnoring_SizeOfDelimiter(string numbers, int expectedResult)
+        {
+            var result = stringCalc.Add(numbers);
+            Assert.AreEqual(expectedResult, result);
+        }
     }
 }
