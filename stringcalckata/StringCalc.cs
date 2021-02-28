@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Net.Http.Headers;
+using System.Threading;
 
 namespace stringcalckata
 {
@@ -28,13 +29,24 @@ namespace stringcalckata
 
             if (numbers.Contains("["))
             {
+                string firstInstance = "[";
+                string secondInstance = "]";
+                
+                string FinalString;
+                int firstInstancePos = numbers.IndexOf(firstInstance) + firstInstance.Length;
+                int secondInstancePos = numbers.IndexOf(secondInstance);
+                var newdelimiter = numbers.Substring(firstInstancePos, secondInstancePos - firstInstancePos);
 
-            
+                
+                
+                
+
+
             }
             
             else if (numbers.Contains("//"))
             {
-                var newDelimiter = numbers[DELIMITER_INDEX];
+                char newDelimiter = numbers[DELIMITER_INDEX];
                 delimiterList.Add(newDelimiter);
                 numbers = numbers.Remove(0, 4);
             }
