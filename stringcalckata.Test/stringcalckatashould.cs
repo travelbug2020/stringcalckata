@@ -59,27 +59,42 @@ namespace stringcalckata.Test
 
             Assert.AreEqual(expectedResult, result);
         }
+
         [TestCase("-2")]
         [TestCase("-3")]
         [TestCase("-3,5")]
         public void ReturnException_WhenInputHas_NegativeNumbers(string numbers)
         {
             Assert.Throws<NegativesNotAllowed>(() => { stringCalc.Add(numbers);});
-                
         }
+
         [TestCase("1001",0)]
         [TestCase("1003",0)]
         [TestCase("1003,5,3,2",10)]
         public void ReturnSum_WhenIgnoring_BigNumbers(string numbers, int expectedResult)
         {
             var result = stringCalc.Add(numbers);
+
             Assert.AreEqual(expectedResult, result);
         }
 
         [TestCase("//[**]\n1**1", 2)]
+        [TestCase("//[**]\n1**2", 3)]
+        [TestCase("//[**]\n1**3", 4)]
+        [TestCase("//[**]\n1**3**1", 5)]
+        [TestCase("//[***]\n1***3***1", 5)]
         public void ReturnSum_WhenIgnoring_SizeOfDelimiter(string numbers, int expectedResult)
         {
             var result = stringCalc.Add(numbers);
+
+            Assert.AreEqual(expectedResult, result);
+        }
+
+        [TestCase("//[*][%]\n1*1%1", 3)]
+        public void ReturnSum_AllowingMultiple_Delimiters(string numbers, int expectedResult)
+        {
+            var result = stringCalc.Add(numbers);
+
             Assert.AreEqual(expectedResult, result);
         }
     }

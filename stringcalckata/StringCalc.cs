@@ -26,25 +26,31 @@ namespace stringcalckata
             }
 
             var delimiterList = new List<char> {'\n', ','};
-
+            List<string> splitNumberList;
             if (numbers.Contains("["))
             {
-                string firstInstance = "[";
-                string secondInstance = "]";
-                
-                string FinalString;
-                int firstInstancePos = numbers.IndexOf(firstInstance) + firstInstance.Length;
-                int secondInstancePos = numbers.IndexOf(secondInstance);
-                var newdelimiter = numbers.Substring(firstInstancePos, secondInstancePos - firstInstancePos);
+                int indexOfFirstNumber;
+                int indexOfSecondNumber;
+                int indexOfNewLineCharacter;
+                int delimiterLength;
+                string openingBracket = "[";
+                string closingBracket = "]";
+                int openingBracketIndex = numbers.IndexOf(openingBracket); 
+                int closingBracketIndex = numbers.IndexOf(closingBracket); 
+                var newdelimiter = numbers.Substring(openingBracketIndex + 1, closingBracketIndex - openingBracketIndex - 1);
+                indexOfNewLineCharacter = numbers.IndexOf('\n');
+                string[] newStringArrayOfNumbers = numbers.Split('\n');
+                var newStringOfNumbers = newStringArrayOfNumbers[1];
+                var splitNumber = newStringOfNumbers.Split(newdelimiter);
+                splitNumberList = CheckNumbersAreSmallerThan1000(splitNumber);
+                splitNumber = splitNumberList.ToArray();
 
-                
-                
-                
-
+                return splitNumber
+                    .Select(stringNumber => Convert.ToInt32(stringNumber))
+                    .Sum();
 
             }
-            
-            else if (numbers.Contains("//"))
+            if (numbers.Contains("//"))
             {
                 char newDelimiter = numbers[DELIMITER_INDEX];
                 delimiterList.Add(newDelimiter);
@@ -54,7 +60,19 @@ namespace stringcalckata
             var splitNumbers = numbers
                 .Split(delimiterList.ToArray());
 
-            List<string> splitNumbersList = new List<string>(splitNumbers);
+            splitNumberList = CheckNumbersAreSmallerThan1000(splitNumbers);
+
+            splitNumbers = splitNumberList.ToArray();
+
+        return splitNumbers
+                .Select(stringNumber => Convert.ToInt32(stringNumber))
+                .Sum();
+
+        }
+
+        public List<string> CheckNumbersAreSmallerThan1000(string[] stringToCheck)
+        {
+            List<string> splitNumbersList = new List<string>(stringToCheck);
             for (int pos = 0; pos < splitNumbersList.Count; pos++)
             {
                 var value = splitNumbersList[pos];
@@ -64,12 +82,7 @@ namespace stringcalckata
                 }
             }
 
-            splitNumbers = splitNumbersList.ToArray();
-
-        return splitNumbers
-                .Select(stringNumber => Convert.ToInt32(stringNumber))
-                .Sum();
-
+            return splitNumbersList;
         }
     }
 }
