@@ -91,6 +91,8 @@ namespace stringcalckata.Test
         }
 
         [TestCase("//[*][%]\n1*1%1", 3)]
+        [TestCase("//[*][%%]\n1*1%%1", 3)]
+        [TestCase("//[******][%%]\n10******10%%10", 30)]
         public void ReturnSum_AllowingMultiple_Delimiters(string numbers, int expectedResult)
         {
             var result = stringCalc.Add(numbers);
